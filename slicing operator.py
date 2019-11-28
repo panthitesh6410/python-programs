@@ -7,3 +7,4 @@ print(ls[0:5])
 print(ls[::-1])
 
 print(ls[-1:0:-1])
+
