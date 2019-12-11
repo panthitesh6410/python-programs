@@ -12,3 +12,4 @@ print(num)      # from 5 to 14
 list = list(range(1, 21, 2))    # here it increments 2 steps rather than 1
 print(list)
 
+
