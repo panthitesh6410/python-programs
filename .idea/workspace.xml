@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3eafb25-f2e7-4049-bab2-7af73f7a0d1b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tkinter-1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-button_handling.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-classes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-dropdown.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-frames.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-graphics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-grid_layout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-message_box.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-status_bar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-toolbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkinter-widgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tkinter-calculator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,15 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tkinter-frames.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkinter-frames.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tkinter-grid_layout.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-grid_layout.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,8 +53,8 @@
       <file leaf-file-name="tkinter-dropdown.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-dropdown.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="36" lean-forward="true" selection-end-line="36" />
+            <state relative-caret-position="756">
+              <caret line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -81,8 +62,8 @@
       <file leaf-file-name="tkinter-toolbar.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-toolbar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="48" lean-forward="true" selection-end-line="51" />
+            <state relative-caret-position="1008">
+              <caret line="48" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -90,7 +71,7 @@
       <file leaf-file-name="tkinter-status_bar.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-status_bar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="1092">
               <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
             </state>
           </provider>
@@ -99,8 +80,8 @@
       <file leaf-file-name="tkinter-message_box.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-message_box.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="5" lean-forward="true" selection-end-line="20" selection-end-column="15" />
+            <state relative-caret-position="273">
+              <caret line="14" column="5" selection-end-line="20" selection-end-column="15" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -108,11 +89,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tkinter-graphics.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tkinter-graphics.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkinter-graphics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="315">
+              <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tkinter-calculator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tkinter-calculator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -135,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/simple_interest.py" />
         <option value="$PROJECT_DIR$/if-statement.py" />
         <option value="$PROJECT_DIR$/elif-statement.py" />
@@ -186,13 +178,14 @@
         <option value="$PROJECT_DIR$/tkinter-status_bar.py" />
         <option value="$PROJECT_DIR$/tkinter-message_box.py" />
         <option value="$PROJECT_DIR$/tkinter-graphics.py" />
+        <option value="$PROJECT_DIR$/tkinter-calculator.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="898" />
-    <option name="height" value="1039" />
+    <option name="width" value="775" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -225,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tkinter-graphics">
+  <component name="RunManager" selected="Python.tkinter-calculator">
     <configuration name="python interpreter" type="PythonConfigurationType" factoryName="Python">
       <module name="python-programs" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -244,7 +237,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="true" />
     </configuration>
-    <configuration name="tkinter-dropdown" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tkinter-calculator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python-programs" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,7 +249,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tkinter-dropdown.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tkinter-calculator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -336,19 +329,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.python interpreter" />
-      <item itemvalue="Python.tkinter-dropdown" />
       <item itemvalue="Python.tkinter-toolbar" />
       <item itemvalue="Python.tkinter-status_bar" />
       <item itemvalue="Python.tkinter-message_box" />
       <item itemvalue="Python.tkinter-graphics" />
+      <item itemvalue="Python.tkinter-calculator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tkinter-calculator" />
         <item itemvalue="Python.tkinter-graphics" />
         <item itemvalue="Python.tkinter-message_box" />
         <item itemvalue="Python.tkinter-status_bar" />
         <item itemvalue="Python.tkinter-toolbar" />
-        <item itemvalue="Python.tkinter-dropdown" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +359,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="718" height="831" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1883289" />
@@ -374,7 +367,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30362117" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2262069" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -392,13 +385,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simple_interest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -712,29 +698,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkinter-dropdown.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="36" lean-forward="true" selection-end-line="36" />
+        <state relative-caret-position="756">
+          <caret line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkinter-toolbar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="48" lean-forward="true" selection-end-line="51" />
+        <state relative-caret-position="1008">
+          <caret line="48" selection-end-line="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkinter-status_bar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="1092">
           <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkinter-message_box.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="5" lean-forward="true" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="273">
+          <caret line="14" column="5" selection-end-line="20" selection-end-column="15" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -743,8 +729,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkinter-graphics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="315">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkinter-calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
