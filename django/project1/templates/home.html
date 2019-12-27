@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+<!-- to include common codes of base.html we use jinja pattern as : -->
+    {% extends 'base.html' %}      <!-- to use/include base.html file inside this webpage -->
+
+    {% block content %}
+
+    <H1>Hello {{name}}</H1>         <!-- double curly sign is jinja pattern and is used to add dynamic content -->
+
+    <form action="add" method="post">             <!-- add is a function(in views.py) which adds numbers -->
+
+        {% csrf_token %}            <!-- we are using a csrf token to send data safetly using post method -->
+
+        <input type="text" name="num1" placeholder="enter 1st number"/>
+        <input type="text" name="num2" placeholder="enter 2nd number"/>
+        <input type="submit"/>
+    </form>
+
+    <!-- include all html code inside opening and closing jinja pattern/code -->
+
+
+    {% endblock %}
+</body>
+</html>

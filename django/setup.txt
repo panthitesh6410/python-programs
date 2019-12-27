@@ -1,0 +1,133 @@
+*************** DJANGO SETUP PROCESS **************
+
+phase 1 :
+1. create and navigate to a seperate directory for django project
+2. create virtual envirnment for project :"mkvirtualenv env_name"
+3. install django :"pip install django"
+4.  create a project "django-admin startproject project_name"
+5. to start server : "python manage.py runserver"  
+
+phase 2 :
+1. after restarting server sometime , enter into environment again : "workon env_name"
+2. create an app(module) : python manage.py startapp app_name
+3. to start server : "python manage.py runserver" 
+
+phase 3 :
+1. open project in an editor/IDE.
+2. create a urls.py file inside app, that contains :
+from django.urls import path
+
+from . import views     # from same directory import views.py file data
+from django.urls import path
+urlpatterns = [
+    path('', views.home, name="home")           # home can be altered by index also and home is a function inside it
+]
+3. edit views.py file as:
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def home(request):
+    return HttpResponse("<h1>hello world</h1>")
+4. now finally, add path of app url.py file inside project urls.py file as :
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('', include('calc.urls')),      # accessing urls.py inside calc app
+    path('admin/', admin.site.urls),
+]
+
+phase 4 :
+1. create a seperate directory for html files inside project folder(not inside app folder) , name it as templates.
+2.  add path in DIRS[] to settings.py file of the html templates as :
+DIRS': [os.path.join(BASE_DIR, 'templates')]
+3. edit views.py file home() function as :
+def home(request):
+    return render(request, 'home.html')
+4. now, to get dynamic content : (to fetch from DB) :
+ add {{variable_name }} inside html file and declare this variable_name or get it from anywhere like DB, etc.. and render like:
+<H1>Hello {{name}}</H1> 
+also change views.py file as:
+def home(request):
+    return render(request, 'home.html', {'name': 'hitesh'})
+5. create an html file as base.html in templates where we put common to all pages codes.
+6. base.html contains :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>common file</title>
+</head>
+<body bgcolor="cyan">
+
+    <!-- it replace content of all pages as : -->
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>
+7. now , to include common codes of base.html we use jinja pattern in home.html pase as :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+<!-- to include common codes of base.html we use jinja pattern as : -->
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    <H1>Hello {{name}}</H1>         <!-- double curly sign is jinja pattern and is used to add dynamic content -->
+
+
+
+
+    {% endblock %}
+</body>
+</html> 
+NOTE : MUST REMEMBER THAT ALL THE HTML CODE OF HOME PAGE MUST BE INSIDE OPENING AND CLOSING JINJA CODE : 
+{% extends 'base.html' %}
+{% block content %}
+	:
+	:
+{% endblock %}
+
+*******************************************************************************************************
+
+to add tow numbers and display them :
+1. create a form which takes two  numbers.
+2. set form's action = method_name, which adds numbers and define that in views.py file
+3. create a result.html page in templates folder to show result 
+4. add path of the function add() in apps/urls.py file as:
+path('add', views.add, name='add') 
+5. define add() function in views.py to add two numbers as:
+def add(request):
+    # to fetch data from textfields:
+    val1 = request.GET['num1']			# can use POST also(in that case add {% csrf_token%} in home.html page inside form)
+    val2 = request.GET['num2']			# can use POST also(in that case add {% csrf_token%} in home.html page inside form)
+    res = int(val1) + int(val2)
+    return render(request, "result.html", {'result':res})
+6. finally, write:
+ Result is : {{result}}      in result.html to display result.
+
+*********************************************************************************************************
+
+To render data dynamilcally :
+
+1. add the thing in views.py which you want to make dynamic as :
+def index(request):
+    return render(request, 'index.html', {'price': 700})
+2. make changes in html page where you want the data to render dynamically as:
+{{price}}
+3. we will create a class in models.py file in case where we want mulitple data render dynamically. for e.g. - if we have to show umage, name, description of multiple places, we create a class and then make its objects like :
+4. any python code (like for, if statements ) inside a html file sholud be written as :
+{% for i in elements %}...{% endfor %}
+{% if t >10 %}...{% endif %} 
+
+for more info., refer to the travello projectapp.

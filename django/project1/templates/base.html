@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>common file</title>
+    <style>
+        body{
+            background-color: #000000;
+            color: #fff;
+            font-family: verdana;
+        }
+        nav ul li{
+            list-style: none;
+            display: inline;
+            margin-right: 200px;
+            text-align: center;
+            background-color: cyan;
+            color: black;
+            padding:15px;
+            border:1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- it replace content of all pages as : -->
+
+    <nav>
+        <ul>
+            <li>login</li>
+            <li>signup</li>
+            <li>about</li>
+            <li>contact</li>
+            <li>more</li>
+        </ul>
+    </nav>
+
+
+    {% block content %}
+
+
+    {% endblock %}
+
+</body>
+</html>
