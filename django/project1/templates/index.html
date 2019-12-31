@@ -246,23 +246,24 @@
 			<div class="row destinations_row">
 				<div class="col">
 					<div class="destinations_container item_grid">
-
-			{% for dest in dests %}
+<h1>dests</h1>
+{{dests.name}}
+			<!-- {% for dest in dests %} -->
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
 								<img src="static/images/destination_1.jpg" alt="">
-								{% if dest.offer %}
+								<!-- {% if dest.offer %} -->
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-								{% endif %}
+								<!-- {% endif %} -->
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
-								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
-								<div class="destination_price">From ${{dest.price}}</div>
+								<div class="destination_title"><a href="destinations.html">{{dests.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dests.desc}}</p></div>
+								<div class="destination_price">From ${{dests.price}}</div>
 							</div>
 						</div>
-			{% endfor %}
+			<!-- {% endfor %} -->
 					</div>
 				</div>
 			</div>

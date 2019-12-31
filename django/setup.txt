@@ -7,7 +7,7 @@ phase 1 :
 4.  create a project "django-admin startproject project_name"
 5. to start server : "python manage.py runserver"  
 
-phase 2 :
+phase 2 :exit
 1. after restarting server sometime , enter into environment again : "workon env_name"
 2. create an app(module) : python manage.py startapp app_name
 3. to start server : "python manage.py runserver" 
@@ -38,6 +38,7 @@ urlpatterns = [
     path('', include('calc.urls')),      # accessing urls.py inside calc app
     path('admin/', admin.site.urls),
 ]
+5. add appname from apps.py to settings.py of project.
 
 phase 4 :
 1. create a seperate directory for html files inside project folder(not inside app folder) , name it as templates.
@@ -98,6 +99,17 @@ NOTE : MUST REMEMBER THAT ALL THE HTML CODE OF HOME PAGE MUST BE INSIDE OPENING 
 	:
 {% endblock %}
 
+
+Phase -5 :
+1. To create an admin user for the first time :
+"python manage.py createsuperuser" 
+2. But initially, perform the migration commands to create DB for users:
+"python manage.py makemigrations" -- >No Change Detected output
+3. To apply migrations :
+"python manage.py migrate"
+4. re-run again the command "python manage.py createsuperuser" as in step 1.
+5. set username and password and it's done.
+
 *******************************************************************************************************
 
 to add tow numbers and display them :
@@ -131,3 +143,138 @@ def index(request):
 {% if t >10 %}...{% endif %} 
 
 for more info., refer to the travello projectapp.
+
+
+**********************************************************
+
+phase 6 :    (Database in django)
+
+1. In Django ORM we represent database structures as classes ans these classes becomes model.
+2. app_directory(blog)/models.py handles DB.
+3. inside models.py we are going to create a "Posts" model i.e. a class that inherits from django models class :
+from django.db import models
+class Posts(models.Model):
+    
+    # declaring fields (i.e. columns of table) :
+
+    title = models.CharField(max_length=100)        # CharField must contain an arguement of max_length
+    content = models.TextField()
+    date_posted = models.DateTimeField('date published')    # check ones 
+    author = models.ForeignKey(User, on_delete=models.CASCADE)        # a foriegn key to connect to users table
+class Posts(models.Model):
+    
+    # declaring fields (i.e. columns of table) :
+
+    title = models.CharField(max_length=100)        # CharField must contain an arguement of max_length
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)   # check ones 
+    author = models.ForeignKey(User, on_delete=models.CASCADE)        # a foriegn key to connect to users table
+4. now , we need to run migrations to update the DB with any changes :
+to create migrations - python manage.py makemigrations 
+Now visit blog(app_name)/migrations/0001_initial.py to see what structure is created
+5. to view sql run that run on DB : python manage.py sqlmigrate blog(app_name) 0001(migration_number)
+6. to make these changes affect the DB we run : python manage.py migrate
+7. create DB using these models :
+run django pythton shell : python manage.py shell - to open python shell
+8. Now import inside shell :  (same as blog(app_name)/models.py)
+from blog.models import Post(class/model we created as a table)
+from django.contrib.auth.models import User
+to quer users table :
+User.objects.all() - gives list of all users includeing admin one.
+8. to get first user :
+User.objects.first()
+to get last result :
+User.objects.last()
+to filter users :
+User.objects.filter(username='panthitesh6410') or User.objects.filter(username='panthitesh6410').first()
+9. get user data in a variable :
+user = User.objects.filter(username='panthitesh6410').first()
+10. to look attributes of user :
+user.id, user.pk, etc..
+to het user from its id : 
+user = User.objects.get(id)
+user
+11. now create a post to make this user as its author :
+12. now to check the posts available in DB :
+Posts.objects.all()
+13. create posts :
+post_1 = Posts(title='blog1', content='first post content', author=user)
+save posts = post_1.save()
+14. now see list of posts again : Posts().objects.all()
+15. now, go to blog/models.py :
+we create a dunder(double underscore) str method __str__(), to make post object descriptive :
+def __str__(self):
+	return(self.title)
+16. now to apply above changes :
+open shell python manage.py shell 
+from blog.models.Posts
+from django.contrib.auth.models import User
+Post.object.all() - to see posts
+creating a new post :
+user = User.objects.filter(username='panthiitesh6410').first()
+post_2 = Posts(title="blog 2", content = "second blog content", author=user)
+post_2.save()
+17. now to replace dummy data and put actual DB data into webpage :
+add/edit into blog/views.py file as:
+from .models import Posts
+def home(request):
+    context = {
+        'posts': Posts.objects.all()
+    }    return render(request, 'blog/home.html', context)     # connect to the template
+18. to make Posts table/model visible in admin portal we need to register this model inside blog/admin.py :
+from django.contrib import admin
+from .models import Posts       # importing models/tables to show into admin portal 
+admin.site.register(Posts)
+
+**********************************************************************************
+
+Creating User Registration Page :
+
+1. navigate to project and create a new app
+2. add app-name to the installed app inside setting.py file of project
+3. visit users/views.py and add user-creation class that already exists in django.
+4. import "from django.contrib.auth.forms import UserCreationForm" inside views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages         # to add send messages  
+
+def register(request):
+    # creating a form :
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)   # it creates a predefined-form
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account Created for {username}!')
+            return redirect('blog-home')
+    else:
+        form = UserCreationForm()            # it creates an empty predefined-form
+    return render(request, 'users/register.html', {'form': form})
+
+5. add path of users-app to the project-name/urls.py file as : 
+path('register/', user_views.register, name='register'),
+6. create file register.html named in  users(app-name)/templates/users/register.html
+7. inside register.html include :
+{% extends "blog/base.html" %}      <!--inheriting from base.html-->
+
+{% block content %}
+
+    <div class="content-section">
+        <form action="" method="POST">
+            <!-- adding csrf for securtiy  -->
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>    
+                {{form}}                            
+            </fieldset>
+            <div class="form-group"><button class="btn btn-outline-info" type="submit">Sign Up</button></div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already have an account ? 
+                <a href="#" class="ml-2">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
+
+8.    
