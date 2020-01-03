@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+        <form  class="form-group" action="" method="POST">
+            {% csrf_token %}
+            {{form}}           
+            <button type="submit" class="btn btn-success">REGISTER</button>
+         </form>
+{% endblock content %}
+    

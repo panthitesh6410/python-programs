@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include    # import include
-from users import views as user_views
+from register import views as v
+from django.contrib.auth import views as auth_views      # importing login-logout views
 
 urlpatterns = [
     path('', include('blog.urls')),            # adding home page of blog app
-    path('register/', user_views.register, name='register'),            # adding home page of blog app
+    path('register/', v.register, name="register"),            # adding home page of blog app
     path('admin/', admin.site.urls),
 ]

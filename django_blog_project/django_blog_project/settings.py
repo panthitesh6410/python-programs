@@ -32,8 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',      # add inside the list everytime a new app is created
-    'users.apps.UsersConfig',     # adding new app to the project setting path
-    'crispy-forms',
+    'register.apps.RegisterConfig',    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,4 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+

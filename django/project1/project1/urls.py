@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('travello', include('travello.urls')),     # to access it add '/travello' after the url
+    path('travello/', include('travello.urls')),     # to access it add '/travello' after the url
+    path('accounts/', include('accounts.urls')),
     path('', include('calc.urls')),             # accessing urls.py inside calc app
     # '' means index file
     path('admin/', admin.site.urls),
+    
 ]

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>registeration</title>
+    <link rel="stylesheet" href="static/travello/bootstrap.min.css">
+    <script src="static/travello/bootstrap.min.js"></script>
+    <script src="static/travello/jquery.js"></script>
+</head>
+<body>
+    <form class="form" action="register" method="POST">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="first_name" placeholder="enter first-name"><br>
+        <input type="text" name="last_name" placeholder="enter last-name"><br>
+        <input type="text" name="username" placeholder="enter username"><br>
+        <input type="email" name="email" placeholder="enter email"><br>
+        <input type="password" name="password1" placeholder="enter password"><br>
+        <input type="password" name="password2" placeholder="confirm password"><br>
+        <input type="submit">
+    </form>
+    {% for message in messages %}
+    <h1>{{messages}}</h1>
+    {% endfor %}
+</body>
+</html>
